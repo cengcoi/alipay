@@ -1,0 +1,14 @@
+{
+    "name": "chan/alipay",
+    "description": "alipay official sdk on composer",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Tod Chan",
+            "email": "cx@cengcoi.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
