@@ -1,5 +1,5 @@
 <?php
-namespance TodChan\Alipay\Request;
+namespace TodChan\Alipay\Request;
 
 /**
  * ALIPAY API: alipay.trade.vendorpay.devicedata.upload request
