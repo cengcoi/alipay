@@ -1,8 +1,6 @@
 <?php
 namespace TodChan\Alipay;
 
-use TodChan\Alipay\AopEncrypt;
-
 class AopClient {
 	//应用ID
 	public $appId;

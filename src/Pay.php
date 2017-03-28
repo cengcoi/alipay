@@ -77,7 +77,7 @@ class Pay
 
     public static function query($appId, $rsaPrivateKey, $alipayRsaPublicKey, $request, $sandBox = false){
         $aop = self::makeAop($appId, $rsaPrivateKey, $alipayRsaPublicKey, $request, $sandBox);
-        
+
         return $aop->execute($request);
     }
 
