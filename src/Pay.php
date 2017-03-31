@@ -23,7 +23,6 @@ class Pay
             self::$aop->postCharset = 'UTF-8';
             self::$aop->signType = 'RSA2';
             self::$aop->alipayrsaPublicKey = $alipayRsaPublicKey;
-            self::$aop->debugInfo = true;
         }
 
         return self::$aop;
