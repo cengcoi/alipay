@@ -5,13 +5,13 @@ namespace TodChan\Alipay\Request;
  * ALIPAY API: alipay.trade.pay request
  *
  * @author auto create
- * @since 1.0, 2017-02-10 17:52:11
+ * @since 1.0, 2018-08-31 11:20:00
  */
 class AlipayTradePayRequest
 {
 	/** 
 	 * 用于在线下场景交易一次创建并支付掉
-     * 修改路由策略到R
+修改路由策略到R
 	 **/
 	private $bizContent;
 

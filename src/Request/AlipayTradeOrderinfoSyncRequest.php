@@ -1,16 +1,14 @@
 <?php
-namespace TodChan\Alipay\Request;
-
 /**
- * ALIPAY API: alipay.trade.app.pay request
+ * ALIPAY API: alipay.trade.orderinfo.sync request
  *
  * @author auto create
- * @since 1.0, 2018-07-16 16:20:00
+ * @since 1.0, 2018-07-23 11:40:00
  */
-class AlipayTradeAppPayRequest
+class AlipayTradeOrderinfoSyncRequest
 {
 	/** 
-	 * app支付接口2.0
+	 * 支付宝订单信息同步接口
 	 **/
 	private $bizContent;
 
@@ -37,7 +35,7 @@ class AlipayTradeAppPayRequest
 
 	public function getApiMethodName()
 	{
-		return "alipay.trade.app.pay";
+		return "alipay.trade.orderinfo.sync";
 	}
 
 	public function setNotifyUrl($notifyUrl)

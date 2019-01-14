@@ -5,7 +5,7 @@ namespace TodChan\Alipay\Request;
  * ALIPAY API: alipay.trade.create request
  *
  * @author auto create
- * @since 1.0, 2017-01-13 10:48:42
+ * @since 1.0, 2018-09-01 17:05:01
  */
 class AlipayTradeCreateRequest
 {
