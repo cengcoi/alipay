@@ -30,7 +30,7 @@ class Pay
 
     /**
      * 创建App支付
-     * @param TodChan\Alipay\Request\AlipayTradeAppPayRequest   $request            App支付请求对象
+     * @param \TodChan\Alipay\Request\AlipayTradeAppPayRequest   $request            App支付请求对象
      * @param string                                            $appId              支付宝应用AppId
      * @param string                                            $rsaPrivateKey      私钥字符
      * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
@@ -45,7 +45,7 @@ class Pay
     }
 
     /**
-     * @param TodChan\Alipay\Request\AlipayTradeWapPayRequest   $request            Wap支付请求对象
+     * @param \TodChan\Alipay\Request\AlipayTradeWapPayRequest   $request            Wap支付请求对象
      * @param string                                            $appId              支付宝应用AppId
      * @param string                                            $rsaPrivateKey      私钥字符
      * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
@@ -59,7 +59,7 @@ class Pay
         return $aop->pageExecute($request);
     }
     /**
-     * @param TodChan\Alipay\Request\AlipayTradePagePayRequest  $request            Wap支付请求对象
+     * @param \TodChan\Alipay\Request\AlipayTradePagePayRequest  $request            Wap支付请求对象
      * @param string                                            $appId              支付宝应用AppId
      * @param string                                            $rsaPrivateKey      私钥字符
      * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
@@ -75,7 +75,7 @@ class Pay
 
     /**
      * 生成预支付信息
-     * @param TodChan\Alipay\Request\AlipayTradePrecreateRequest    $request            预支付请求对象
+     * @param \TodChan\Alipay\Request\AlipayTradePrecreateRequest    $request            预支付请求对象
      * @param string                                                $appId              支付宝应用AppId
      * @param string                                                $rsaPrivateKey      私钥字符
      * @param string                                                $alipayRsaPublicKey 支付宝公钥字符
@@ -91,7 +91,7 @@ class Pay
 
     /**
      * 查询订单
-     * @param TodChan\Alipay\Request\AlipayTradeQueryRequest    $request            查询请求对象
+     * @param \TodChan\Alipay\Request\AlipayTradeQueryRequest    $request            查询请求对象
      * @param string                                            $appId              支付宝应用AppId
      * @param string                                            $rsaPrivateKey      私钥字符
      * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
