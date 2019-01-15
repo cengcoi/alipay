@@ -11,7 +11,7 @@ class Pay
 
     private static $aop;
 
-    public static function makeAop($appId, $rsaPrivateKey, $alipayRsaPublicKey, $sandBox = false) {
+    protected static function makeAop($appId, $rsaPrivateKey, $alipayRsaPublicKey, $sandBox = false) {
         if (!self::$aop) {
             self::$aop = new AopClient;
             // 根据是否沙盒模式决定网关地址
@@ -30,11 +30,11 @@ class Pay
 
     /**
      * 创建App支付
-     * @param AlipayTradeAppPayRequest $request            App支付请求对象
-     * @param string                   $appId              支付宝应用AppId
-     * @param string                   $rsaPrivateKey      私钥字符
-     * @param string                   $alipayRsaPublicKey 支付宝公钥字符
-     * @param bool|false               $sandBox            沙盒开启
+     * @param TodChan\Alipay\Request\AlipayTradeAppPayRequest   $request            App支付请求对象
+     * @param string                                            $appId              支付宝应用AppId
+     * @param string                                            $rsaPrivateKey      私钥字符
+     * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
+     * @param bool|false                                        $sandBox            沙盒开启
      * @return string
      */
     public static function createAppPay($request, $appId, $rsaPrivateKey, $alipayRsaPublicKey, $sandBox = false) {
@@ -45,11 +45,11 @@ class Pay
     }
 
     /**
-     * @param AlipayTradeWapPayRequest $request            Wap支付请求对象
-     * @param string                   $appId              支付宝应用AppId
-     * @param string                   $rsaPrivateKey      私钥字符
-     * @param string                   $alipayRsaPublicKey 支付宝公钥字符
-     * @param bool|false               $sandBox            沙盒开启
+     * @param TodChan\Alipay\Request\AlipayTradeWapPayRequest   $request            Wap支付请求对象
+     * @param string                                            $appId              支付宝应用AppId
+     * @param string                                            $rsaPrivateKey      私钥字符
+     * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
+     * @param bool|false                                        $sandBox            沙盒开启
      * @return string|提交表单HTML文本
      * @throws Exception
      */
@@ -58,14 +58,28 @@ class Pay
 
         return $aop->pageExecute($request);
     }
+    /**
+     * @param TodChan\Alipay\Request\AlipayTradePagePayRequest  $request            Wap支付请求对象
+     * @param string                                            $appId              支付宝应用AppId
+     * @param string                                            $rsaPrivateKey      私钥字符
+     * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
+     * @param bool|false                                        $sandBox            沙盒开启
+     * @return string|提交表单HTML文本
+     * @throws Exception
+     */
+    public static function createPagePay($request, $appID, $rsaPrivateKey, $alipayRsaPublicKey, $sandBox = false){
+        $aop = self::makeAop($appId, $rsaPrivateKey, $alipayRsaPublicKey, $sandBox);
+
+        return $aop->pageExecute($request);
+    }
 
     /**
      * 生成预支付信息
-     * @param AlipayTradePrecreateRequest $request            预支付请求对象
-     * @param string                      $appId              支付宝应用AppId
-     * @param string                      $rsaPrivateKey      私钥字符
-     * @param string                      $alipayRsaPublicKey 支付宝公钥字符
-     * @param bool|false                  $sandBox            沙盒开启
+     * @param TodChan\Alipay\Request\AlipayTradePrecreateRequest    $request            预支付请求对象
+     * @param string                                                $appId              支付宝应用AppId
+     * @param string                                                $rsaPrivateKey      私钥字符
+     * @param string                                                $alipayRsaPublicKey 支付宝公钥字符
+     * @param bool|false                                            $sandBox            沙盒开启
      * @return bool|mixed|\SimpleXMLElement
      * @throws Exception
      */
@@ -77,11 +91,11 @@ class Pay
 
     /**
      * 查询订单
-     * @param AlipayTradeQueryRequest $request            查询请求对象
-     * @param string                  $appId              支付宝应用AppId
-     * @param string                  $rsaPrivateKey      私钥字符
-     * @param string                  $alipayRsaPublicKey 支付宝公钥字符
-     * @param bool|false              $sandBox            沙盒开启
+     * @param TodChan\Alipay\Request\AlipayTradeQueryRequest    $request            查询请求对象
+     * @param string                                            $appId              支付宝应用AppId
+     * @param string                                            $rsaPrivateKey      私钥字符
+     * @param string                                            $alipayRsaPublicKey 支付宝公钥字符
+     * @param bool|false                                        $sandBox            沙盒开启
      * @return bool|mixed|\SimpleXMLElement
      * @throws Exception
      */
